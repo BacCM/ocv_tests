@@ -1,6 +1,6 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/objdetect.hpp>
-
+#include <locale>
 
 #include <iostream>
 
@@ -8,19 +8,19 @@ using namespace cv;
 using namespace std;
 
 int main() {
+	std::setlocale(LC_ALL, "ru_Ru.UTF8");
 	// Захват видео с камеры
-/*	VideoCapture cap(0);
+	VideoCapture cap(0);
 	if (!cap.isOpened()) {
 		cout << "Камера не найдена!" << endl;
 		return -1;
 	}
-*/
+/*
 	Mat image = imread("test.jpg");
-
 	if (image.empty()) {
 		cout << "Не удалось загрузить имадж!" << endl;
 	}
-
+*/
 	// Загрузка каскада для детектирования лиц
 	CascadeClassifier faceCascade;
 	if (!faceCascade.load("haarcascade_frontalface_default.xml")) {
@@ -29,9 +29,9 @@ int main() {
 		return -1;
 	}
 
-	Mat frame = image;
+	Mat frame;
 	while (true) {
-//		cap >> frame;
+		cap >> frame;
 		if (frame.empty()) break;
 
 		// Конвертируем в оттенки серого для детектора
