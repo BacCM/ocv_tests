@@ -2,3 +2,6 @@
 .vs/
 x64/
 
+
+/camera_capture/opencv_world4120d.dll
+/things_detection/yolov3.weights
