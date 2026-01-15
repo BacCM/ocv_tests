@@ -30,7 +30,7 @@ int main()
 	net.setPreferableTarget(DNN_TARGET_CPU);
 
 	// Загружаем изображение
-	Mat frame = imread("h1.jpg");
+	Mat frame = imread("t4.jpg");
 	if (frame.empty()) {
 		cout << "Не удалось загрузить изображение!" << endl;
 		return -1;
